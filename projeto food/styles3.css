@@ -1,0 +1,215 @@
+/* estilos globais */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #000;
+    color: #fff;
+    line-height: 1.6;
+}
+
+header {
+    background-color: #222;
+    padding: 20px;
+    text-align: center;
+}
+
+nav h1 {
+    margin-bottom: 2%;
+    color: #e63946;
+}
+
+nav ul {
+    list-style: none;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 10px;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+
+nav ul li a:hover {
+    background-color: #e63946;
+}
+
+/* Estilo da seção de login e cadastro */
+#meu-espaco {
+    padding: 40px 20px;
+    background-color: #111;
+    color: rgb(212, 212, 212);
+    text-align: center;
+}
+
+#meu-espaco h2 {
+    color: #e63946;
+    margin-bottom: 30px;
+}
+
+#forms-container {
+    margin-top: 1%;
+    display: none; /* Oculto por padrão */
+    padding: 20px;
+    background-color: #222; /* Fundo escuro para o painel */
+    border-radius: 10px; /* Bordas arredondadas */
+    text-align: center; /* Centraliza o conteúdo */
+}
+
+/* Formulários empilhados */
+#meu-espaco div {
+    display: flex;
+    flex-direction: column; /* Coloca os itens em coluna */
+    align-items: center; /* Centraliza os itens */
+    margin-bottom: 30px;
+}
+
+/* Campos de entrada */
+#meu-espaco input {
+    display: block;
+    width: 80%;
+    padding: 10px;
+    margin: 6px auto;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    background-color: #555; /* Cor de fundo cinza */
+    color: white; /* Texto branco */
+}
+
+#meu-espaco button {
+    background-color: #e63946;
+    color: white; /* Corrigido para "white" */
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#meu-espaco button:hover {
+    background-color: #d62828;
+}
+
+/* Estilo da seção de pedidos */
+.pedidos-section {
+    padding: 40px 20px;
+    background-color: #000;
+    color: #fff;
+    text-align: center;
+}
+
+.pedido-item {
+    background-color: #222;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+}
+
+.pedido-item h3 {
+    color: #e63946;
+}
+
+.pedido-item p {
+    color: #ccc;
+}
+
+/* Estilo de avaliação com estrelas */
+.rating {
+    display: flex;
+    justify-content: center; /* Centraliza as estrelas */
+    margin-top: 20px; /* Espaço acima da seção de estrelas */
+}
+
+.star {
+    font-size: 2em;
+    color: #ccc; /* Estrelas vazias */
+    cursor: pointer;
+    transition: color 0.2s;
+}
+
+.star:hover,
+.star.hovered {
+    color: red; /* Cor ao passar o mouse */
+}
+
+.star.selected {
+    color: red; /* Cor fixa após selecionar */
+}
+/* Estilo para a caixa de comentário */
+#comment-section {
+    display: none; /* Inicialmente escondido */
+    padding: 20px;
+    background-color: #333; /* Fundo escuro */
+    border-radius: 10px;
+    max-width: 600px;
+    margin: 20px auto;
+    text-align: center;
+}
+
+#comment-section textarea {
+    width: 100%;
+    padding: 10px;
+    font-size: 1rem;
+    background-color: #555; /* Fundo cinza escuro */
+    border: none;
+    border-radius: 5px;
+    color: white;
+    resize: vertical; /* Permite redimensionamento vertical */
+    min-height: 100px;
+    margin-bottom: 15px;
+}
+
+#comment-section button {
+    background-color: #e63946;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#comment-section button:hover {
+    background-color: #d62828; /* Tom de vermelho mais escuro ao passar o mouse */
+}
+
+#comment-section button:active {
+    transform: scale(0.98); /* Efeito de pressionar o botão */
+}
+
+#comment-section p {
+    color: #ccc; /* Texto explicativo ou mensagens */
+    margin-top: 10px;
+    font-size: 0.9rem;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    #meu-espaco input {
+        width: 100%;
+    }
+
+    .pedido-item {
+        padding: 15px;
+    }
+}
+
+/* Estilo do rodapé */
+footer {
+    background-color: #222;
+    padding: 10px;
+    text-align: center;
+    color: #999;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+}

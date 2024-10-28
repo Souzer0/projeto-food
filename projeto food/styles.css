@@ -1,0 +1,240 @@
+
+@media (max-width: 768px) {
+    .menu-item {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .menu-item img {
+        width: 100%;
+    height: auto;
+    max-width: 150px; /* Define um tamanho máximo para a imagem */
+    border-radius: 10px; /* Dá um contorno arredondado, se quiser */
+    object-fit: cover;
+    }
+
+    nav ul li {
+        display: block;
+        margin: 10px 0;
+    }
+}
+@media (max-width: 480px) {
+    .menu-item h3 {
+        font-size: 18px; /* Reduz o tamanho do título em telas menores */
+    }
+
+    .menu-item p {
+        font-size: 14px; /* Ajuste para o texto das descrições */
+    }
+}
+
+/* estilos global nessa porra */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #000;
+    color: #fff;
+    line-height: 1.6;
+}
+
+header {
+    background-color: #222;
+    padding: 20px;
+    text-align: center;
+}
+
+
+
+nav h1 {
+    margin-bottom: 2%;
+    color: #e63946;
+}
+
+nav ul {
+    list-style: none;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 10px;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+
+nav ul li a:hover {
+    background-color: #e63946;
+}
+
+
+.menu-section {
+    padding: 20px;
+}
+
+.menu-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.menu-item h3 {
+    color: #e63946;
+    margin-bottom: 5px;
+}
+
+.menu-item button {
+    background-color: #e63946;
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-left: 2%;
+}
+
+.menu-item button:hover {
+    background-color: #d62828;
+}
+
+footer {
+    background-color: #222;
+    padding: 10px;
+    text-align: center;
+    color: #999;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+}
+.lanche {
+    width: 100%;
+    height: auto;
+    max-width: 150px; /* Define um tamanho máximo para a imagem */
+    border-radius: 10px; /* Dá um contorno arredondado, se quiser */
+    object-fit: cover; /* Faz com que a imagem se ajuste à div sem distorções */
+    margin-bottom: 10px;
+}
+.menu-section h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    border-bottom: 2px solid #e63946; /* Barra inferior */
+    padding-bottom: 10px; /* Espaçamento entre o título e a barra */
+}
+/* Estilos para a comanda */
+.comanda-section {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 300px;
+    height: 100%;
+    background-color: #222;
+    color: white;
+    box-shadow: -2px 0 5px rgba(0, 0, 0, 0.5);
+    transform: translateX(100%); /* Começa escondida */
+    transition: transform 0.3s ease;
+    z-index: 1000;
+}
+
+/* Comanda visível */
+.comanda-section.visible {
+    transform: translateX(0); /* A comanda desliza para a tela */
+}
+
+/* Comanda escondida */
+.comanda-section.hidden {
+    transform: translateX(100%); /* A comanda desliza para fora da tela */
+}
+.toggle-comanda {
+    border-radius: 50px;
+    position: fixed;
+    top: 50%;
+    right: 10px;
+    background-color: #e63946;
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    font-size: 24px;
+    z-index: 1001;
+    transition: transform 0.3s ease;
+}
+
+/* Seta virada para a esquerda quando a comanda está visível */
+.toggle-comanda.open {
+    transform: rotate(180deg); /* Roda a seta quando a comanda está visível */
+}
+.comanda-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    padding-left: 10%;
+    background-color: #444;
+    color: white;
+}
+
+#finalizar-comanda {
+    padding: 5px 10px;
+    background-color: #e63946;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+#observacoes {
+    width: 90%;
+    margin: 10px auto;
+    display: block;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #fff;
+    color: #333;
+    resize: none;
+}
+/* botão de remover (-) */
+button.remover-item {
+    background-color: #e63946;  
+    color: white;  
+    border: none;  
+    padding: 5px 10px; 
+    cursor: pointer; 
+    font-size: 18px;
+    border-radius: 5px;  
+    margin-right: 5px;  
+}
+
+/* botão de adicionar (+) */
+button.adicionar-item {
+    background-color: #e63946;
+    color: white; 
+    border: none; 
+    padding: 5px 10px;  
+    cursor: pointer; 
+    font-size: 18px;  
+    border-radius: 5px; 
+    margin-left: 5px;  
+}
+
+button.remover-item:hover,
+button.adicionar-item:hover {
+    opacity: 0.8;  
+    transition: opacity 0.2s;  
+}
+#itens-comanda {
+    flex: 1;
+    padding: 10px;
+}
+#total-comanda {
+    margin-left: 10px;
+    margin-top: auto;
+}

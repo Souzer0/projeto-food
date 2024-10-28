@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meu Espaço - Restaurante XYZ</title>
+    <link rel="stylesheet" href="styles3.css">
+    <script src="scripts.js" defer></script>
+</head>
+<body>
+    <header>
+        <nav>
+            <h1>Restaurante XYZ</h1>
+            <ul>
+                <li><a href="index.html">Menu</a></li>
+                <li><a href="contato.html">Contato</a></li>
+                <li><a href="minhaarea.html">Meu Espaço</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="meu-espaco">
+        <button id="btn-entrar">Entrar</button>
+        <button id="btn-cadastrar">Cadastrar</button>
+
+        <div id="forms-container" style="display: none;">
+            <!-- Formulário de Login -->
+            <div id="login-form" style="display: none;">
+                <h3>Login</h3>
+                <form>
+                    <label for="login-email">Email:</label>
+                    <input type="email" id="login-email" required>
+                    <label for="login-senha">Senha:</label>
+                    <input type="password" id="login-senha" required>
+                    <button type="submit">Entrar</button>
+                </form>
+            </div>
+
+            <!-- Formulário de Cadastro -->
+            <div id="cadastro-form" style="display: none;">
+                <h3>Cadastro</h3>
+                <form>
+                    <label for="cadastro-nome">Nome:</label>
+                    <input type="text" id="cadastro-nome" required>
+                    <label for="cadastro-cpf">CPF:</label>
+                    <input type="text" id="cadastro-cpf" required>
+                    <label for="cadastro-email">Email:</label>
+                    <input type="email" id="cadastro-email" required>
+                    <label for="cadastro-telefone">Telefone:</label>
+                    <input type="tel" id="cadastro-telefone" required>
+                    <label for="cadastro-endereco">Endereço:</label>
+                    <input type="text" id="cadastro-endereco" required>
+                    <button type="submit">Cadastrar</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sessão de Pedidos -->
+    <section id="pedidos-ativos" class="pedidos-section" style="display: none;">
+        <h2>Pedidos</h2>
+        <div class="pedido-item">
+            <h3>Pedido #1234</h3>
+            <p>07/10/2024</p>
+            <p>14:33</p>
+            <p>Status: Entregue</p>
+            <p>Total: R$ 45,00</p>
+
+            <!-- Sessão de avaliação -->
+            <div class="rating">
+                <span class="star" data-value="1">★</span>
+                <span class="star" data-value="2">★</span>
+                <span class="star" data-value="3">★</span>
+                <span class="star" data-value="4">★</span>
+                <span class="star" data-value="5">★</span>
+            </div>
+            <div id="comment-section" style="display: none;">
+                <textarea id="comment" placeholder="Deixe seu comentário sobre o pedido"></textarea>
+                <button id="submit-comment">Enviar comentário</button>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Restaurante XYZ. Todos os direitos reservados.</p>
+    </footer>
+</body>
+</html>

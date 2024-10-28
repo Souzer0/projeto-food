@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Área Administrativa</title>
+    <link rel="stylesheet" href="stylesadm.css">
+</head>
+<body>
+    <header>
+        <h1>Painel Administrativo</h1>
+    </header>
+    
+    <!-- LOGIN -->
+    <main id="login-section">
+        <form id="admin-login-form" onsubmit="return validateLogin(event)">
+            <input type="text" id="username" placeholder="Usuário" required>
+            <input type="password" id="password" placeholder="Senha" required>
+            <button type="submit">Entrar</button>
+        </form>
+    </main>
+
+    <!-- BOTÕES -->
+    <main id="admin-section" style="display: none;">
+        <h2>Funções administrativas</h2>
+        <section id="admin-actions">
+            <button onclick="showSection('pedidos-ativos')">Pedidos Ativos</button>
+            <button onclick="showSection('produtos')">Cadastrar Produtos</button>
+            <button onclick="showSection('estoque')">Gerenciar Estoque</button>
+            <button onclick="showSection('faturamento')">Ver Faturamento</button>
+            <button onclick="showSection('avaliacoes')">Ver Avaliações</button>
+            <button onclick="showSection('promocao-page')">Configurar Promoção</button>
+        </section>
+
+        <!-- CADASTRO DE PRODUTO -->
+        <section id="produtos" style="display: none;">
+            <h3>Cadastrar Novo Produto</h3>
+            <form id="product-form">
+                <input type="text" placeholder="Nome do Produto" required>
+                <input type="text" placeholder="Descrição do Produto" required>
+                <input type="number" placeholder="Preço" required>
+                <button type="submit">Cadastrar</button>
+            </form>
+        </section>
+
+        <!-- CONTROLE DE ESTOQUE -->
+        <section id="estoque" style="display: none;">
+            <h3>Gerenciar Estoque</h3>
+            <div class="product-control">
+                <label for="produto1">Produto 1</label>
+                <div class="quantity-control">
+                    <button class="decrease" onclick="decreaseQuantity('produto1')">▼</button>
+                    <input type="text" id="produto1" value="10" readonly>
+                    <button class="increase" onclick="increaseQuantity('produto1')">▲</button>
+                </div>
+            </div>
+            <div class="product-control">
+                <label for="produto2">Produto 2</label>
+                <div class="quantity-control">
+                    <button class="decrease" onclick="decreaseQuantity('produto2')">▼</button>
+                    <input type="text" id="produto2" value="15" readonly>
+                    <button class="increase" onclick="increaseQuantity('produto2')">▲</button>
+                </div>
+            </div>
+            <div class="product-control">
+                <label for="produto3">Produto 3</label>
+                <div class="quantity-control">
+                    <button class="decrease" onclick="decreaseQuantity('produto3')">▼</button>
+                    <input type="text" id="produto3" value="13" readonly>
+                    <button class="increase" onclick="increaseQuantity('produto3')">▲</button>
+                </div>
+            </div>
+            <div class="product-control">
+                <label for="produto4">Produto 4</label>
+                <div class="quantity-control">
+                    <button class="decrease" onclick="decreaseQuantity('produto4')">▼</button>
+                    <input type="text" id="produto4" value="12" readonly>
+                    <button class="increase" onclick="increaseQuantity('produto4')">▲</button>
+                </div>
+            </div>
+            <div class="product-control">
+                <label for="produto5">Produto 5</label>
+                <div class="quantity-control">
+                    <button class="decrease" onclick="decreaseQuantity('produto5')">▼</button>
+                    <input type="text" id="produto5" value="18" readonly>
+                    <button class="increase" onclick="increaseQuantity('produto5')">▲</button>
+                </div>
+            </div>
+            <div class="product-control">
+                <label for="produto6">Produto 6</label>
+                <div class="quantity-control">
+                    <button class="decrease" onclick="decreaseQuantity('produto6')">▼</button>
+                    <input type="text" id="produto6" value="36" readonly>
+                    <button class="increase" onclick="increaseQuantity('produto6')">▲</button>
+                </div>
+            </div>
+            <div class="product-control">
+                <label for="produto7">Produto 7</label>
+                <div class="quantity-control">
+                    <button class="decrease" onclick="decreaseQuantity('produto7')">▼</button>
+                    <input type="text" id="produto7" value="13" readonly>
+                    <button class="increase" onclick="increaseQuantity('produto7')">▲</button>
+                </div>
+            </div>
+            <div class="product-control">
+                <label for="bebida1">Bebida 1</label>
+                <div class="quantity-control">
+                    <button class="decrease" onclick="decreaseQuantity('bebida1')">▼</button>
+                    <input type="text" id="bebida1" value="21" readonly>
+                    <button class="increase" onclick="increaseQuantity('bebida1')">▲</button>
+                </div>
+            </div>
+            <div class="product-control">
+                <label for="bebida2">Bebida 2</label>
+                <div class="quantity-control">
+                    <button class="decrease" onclick="decreaseQuantity('bebida2')">▼</button>
+                    <input type="text" id="bebida2" value="9" readonly>
+                    <button class="increase" onclick="increaseQuantity('bebida2')">▲</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- FATURAMENTO -->
+        <section id="faturamento" style="display: none;">
+            <h3>Faturamento</h3>
+            <p>Faturamento total: R$ 12.345,00</p>
+            <p>Produtos vendidos: 456</p>
+        </section>
+
+        <!-- REVIEWS -->
+        <section id="avaliacoes" style="display: none;">
+            <h3>Avaliações dos Pedidos</h3>
+            
+            <!-- Avaliação 1 -->
+            <div class="pedido-item">
+                <h4>Pedido #1234</h4>
+                <p>07/10/2024</p>
+                <p>Status: Entregue</p>
+                <p>Total: R$ 45,00</p>
+
+                <div class="rating">
+                    <span class="star" data-value="1">★</span>
+                    <span class="star" data-value="2">★</span>
+                    <span class="star" data-value="3">★</span>
+                    <span class="star" data-value="4">★</span>
+                    <span class="star" data-value="5">★</span>
+                </div>
+                <p>Comentário: "Ótimo serviço!"</p>
+            </div>
+
+            <!-- Avaliação 2 -->
+            <div class="pedido-item">
+                <h4>Pedido #5678</h4>
+                <p>08/10/2024</p>
+                <p>Status: Entregue</p>
+                <p>Total: R$ 56,00</p>
+
+                <div class="rating">
+                    <span class="star" data-value="1">★</span>
+                    <span class="star" data-value="2">★</span>
+                    <span class="star" data-value="3">★</span>
+                </div>
+                <p>Comentário: "Comida deliciosa!"</p>
+            </div>
+
+            <!-- Avaliação 3 -->
+            <div class="pedido-item">
+                <h4>Pedido #9101</h4>
+                <p>09/10/2024</p>
+                <p>Status: Entregue</p>
+                <p>Total: R$ 72,00</p>
+
+                <div class="rating">
+                    <span class="star" data-value="1">★</span>
+                    <span class="star" data-value="2">★</span>
+                    <span class="star" data-value="3">★</span>
+                    <span class="star" data-value="4">★</span>
+                </div>
+                <p>Comentário: "Muito bom!"</p>
+            </div>
+
+            <!-- copia e cola pra mais avaliações etc -->
+        </section>
+
+        <!-- DEFINIÇÃO DE PROMOÇÃO -->
+        <section id="promocao-page" style="display: none;">
+            <h3>Escolha o Lanche da Promoção</h3>
+            <div class="promo-grid">
+                <div class="promo-item">
+                    <img src="pratao1.png" alt="Lanche 1">
+                    <p>Lanche 1</p>
+                    <input type="radio" name="promo-lanche" id="lanche1" class="promo-check">
+                </div>
+                <div class="promo-item">
+                    <img src="pratao2.png" alt="Lanche 2">
+                    <p>Lanche 2</p>
+                    <input type="radio" name="promo-lanche" id="lanche2" class="promo-check">
+                </div>
+                <div class="promo-item">
+                    <img src="pratao3.png" alt="Lanche 3">
+                    <p>Lanche 3</p>
+                    <input type="radio" name="promo-lanche" id="lanche3" class="promo-check">
+                </div>
+                <div class="promo-item">
+                    <img src="pratao4.png" alt="Lanche 4">
+                    <p>Lanche 4</p>
+                    <input type="radio" name="promo-lanche" id="lanche4" class="promo-check">
+                </div>
+                <div class="promo-item">
+                    <img src="pratao5.png" alt="Lanche 5">
+                    <p>Lanche 5</p>
+                    <input type="radio" name="promo-lanche" id="lanche5" class="promo-check">
+                </div>
+                <div class="promo-item">
+                    <img src="pratao6.png" alt="Lanche 6">
+                    <p>Lanche 6</p>
+                    <input type="radio" name="promo-lanche" id="lanche6" class="promo-check">
+                </div>
+            </div>
+        </section>
+
+        
+        <section id="pedidos-ativos" style="display: none;">
+            <h3>Pedidos Ativos</h3>
+            <div class="pedido-item">
+                <h4>Pedido #2024</h4>
+                <p>Data: 23/10/2024</p>
+                <p>Status: Em andamento</p>
+                <p>Total: R$ 78,00</p>
+                
+                <div class="pedido-detalhes">
+                    <p>Itens:</p>
+                    <ul>
+                        <li>Item 1 - Quantidade: 2</li>
+                        <li>Item 2 - Quantidade: 1</li>
+                    </ul>
+                </div>
+                <br>
+                <button class="finalizar-pedido" onclick="finalizarPedido('2024')">Finalizar Pedido</button>
+            </div>
+        </section>
+        
+        
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Restaurante XYZ. Todos os direitos reservados.</p>
+    </footer>
+
+    <script src="scripts_adm.js"></script>
+</body>
+</html>

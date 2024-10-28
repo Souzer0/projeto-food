@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Restaurante XYZ</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="scripts_index.js" defer></script>
+</head>
+<body>
+    <header>
+        <nav>
+            <h1>Restaurante XYZ</h1>
+            <ul>
+                <li><a href="index.html">Menu</a></li>
+                <li><a href="contato.html">Contato</a></li>
+                <li><a href="minhaarea.html">Meu Espaço</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="menu" class="menu-section">
+        <h2>Nosso delicioso cardápio</h2>
+        <br>
+        <!-- Lista de couisas pra pedir ai -->
+        <div class="menu-item">
+            <img src="pratao1.png" alt="Prato 1" class="lanche">
+            <div>
+                <h3>Double Smash</h3>
+                <p>
+                    Um suculento hambúrguer com duas carnes smash douradas, cobertas com queijo derretido e um molho cremoso e irresistível que envolve cada mordida.</p>
+                <span>R$ 28,00</span>
+                <button>Adicionar</button>
+            </div>
+        </div>
+        <!-- agora repete-->
+        <div class="menu-item">
+            <img src="pratao2.png" alt="Prato 2" class="lanche">
+            <div>
+                <h3>Cheddar Melter</h3>
+                <p>Um hambúrguer alto e robusto, com uma camada generosa de cheddar derretido que escorre sobre a carne suculenta, criando uma explosão de sabor a cada mordida.</p>
+                <span>R$ 31,00</span>
+                <button>Adicionar</button>
+            </div>
+        </div>
+        <div class="menu-item">
+            <img src="pratao3.png" alt="Prato 3" class="lanche">
+            <div>
+                <h3>Smash Bacon</h3>
+                <p>Um hambúrguer irresistível com carne smash dourada, coberta com queijo derretido, fatias crocantes de bacon e um molho cremoso que une todos os sabores em uma combinação perfeita.</p>
+                <span>R$ 27,50</span>
+                <button>Adicionar</button>
+            </div>
+        </div>
+        <div class="menu-item">
+            <img src="pratao4.png" alt="Prato 4" class="lanche">
+            <div>
+                <h3>Double Cheese Smash Bacon</h3>
+                <p>Um hambúrguer épico com duas carnes smash suculentas, cobertas por uma dupla de queijos—prato e americano—que derretem sobre a carne. Fatias crocantes de bacon e um molho cremoso completam essa explosão de sabor.</p>
+                <span>R$ 38,00</span>
+                <button>Adicionar</button>
+            </div>
+        </div>
+        <div class="menu-item">
+            <img src="pratao5.png" alt="Prato 5" class="lanche">
+            <div>
+                <h3>Beef Salada</h3>
+                <p>Um hambúrguer clássico e refrescante com carne de bife suculenta, coberta por queijo derretido, fatias crocantes de bacon e picles, alface, tomate e cebola frescos. Tudo isso envolto em um delicioso molho de salada que equilibra perfeitamente cada ingrediente.</p>
+                <span>R$ 28,50</span>
+                <button>Adicionar</button>
+            </div>
+        </div>
+        <div class="menu-item">
+            <img src="pratao6.png" alt="Prato 6" class="lanche">
+            <div>
+                <h3>Crisp Chicken Mostarda & Mel</h3>
+                <p>
+                    Um hambúrguer irresistível de frango empanado crocante, servido em pão australiano macio, com queijo derretido e cebola caramelizada que traz um toque agridoce. Finalizado com uma camada de mostarda com mel, garantindo uma combinação perfeita de sabores e texturas.</p>
+                <span>R$ 29,50</span>
+                <button>Adicionar</button>
+            </div>
+        </div>
+        <h2>Não deixe sua janta sozinha</h2>
+        <div class="menu-item">
+            <img src="fritas.png" alt="fritas" class="lanche">
+            <div>
+                <h3>Porção Pequena Fritas</h3>
+                <span>R$ 9,00</span>
+                <button>Adicionar</button>
+            </div>
+        </div>
+        <h2>Refresque seu dia</h2>
+        <div class="menu-item">
+            <img src="coca.png" alt="Coca-Cola" class="lanche">
+            <div>
+                <h3>Lata Coca-Cola 350ml</h3>
+                <span>R$ 6,00</span>
+                <button>Adicionar</button>
+            </div>
+        </div>
+        <div class="menu-item">
+            <img src="guarana.png" alt="Coca-Cola" class="lanche">
+            <div>
+                <h3>Lata Guarana 350ml</h3>
+                <span>R$ 4,50</span>
+                <button>Adicionar</button>
+            </div>
+        </div>
+    </section>
+<!-- Seção da comanda -->
+<section id="comanda" class="comanda-section hidden">
+    <div class="comanda-header">
+        <h2>Comanda</h2>
+        <button id="finalizar-comanda">Finalizar Comanda</button>
+    </div>
+    
+    <!-- Itens da Comanda -->
+    <div id="itens-comanda" class="itens-comanda"></div>
+    
+    <!-- Total da Comanda -->
+    <p id="total-comanda">Total: R$ 0.00</p>
+    
+    <!-- Observações -->
+    <textarea id="observacoes" placeholder="Observações (Exemplo: Sem cebola...)" rows="3"></textarea>
+</section>
+
+<button class="toggle-comanda">&#9665;</button>
+
+    <footer>
+        <p>&copy; 2024 Restaurante XYZ. Todos os direitos reservados.</p>
+    </footer>
+</body>
+</html>
